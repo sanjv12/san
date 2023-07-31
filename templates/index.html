@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF Text Extractor</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="convertPDF"><pr style="padding-right:7px"> ConvertPDF</pr> 
+        <input type="file" id="pdfFileInput" style="display: none;">
+        <button onclick="document.getElementById('pdfFileInput').click();">File</button></div>
+    </div>
+    <div class="output-container">
+        <h2>Extracted Text:</h2>
+        <pre id="output"></pre>
+    </div>
+
+    <script>
+        document.getElementById('pdfFileInput').addEventListener('change', function() {
+            const file = this.files[0];
+            const formData = new FormData();
+            formData.append('pdf_file', file);
+
+            fetch('/extract_text', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.text())
+            .then(text => {
+                document.getElementById('output').innerText = text;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('output').innerText = 'An error occurred while processing the PDF.';
+            });
+        });
+    </script>
+</body>
+</html>
