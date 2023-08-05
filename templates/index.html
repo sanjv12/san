@@ -1,39 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>PDF Text Extractor</title>
-    <link rel="stylesheet" href="static/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLAMES Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: -moz-linear-gradient(top, #E0AAFF 0%, #906DA3 50%, #403048 100%);
+      background: -webkit-linear-gradient(top, #E0AAFF 0%, #906DA3 50%, #403048 100%);
+      background: linear-gradient(to bottom, #E0AAFF 0%, #906DA3 50%, #403048 100%);
+      min-height: 100vh;
+      margin: 5px 0 0 0;
+    }
+    .topbar{
+      border-style:solid;
+      border-width: 20px;
+      border-color: #d875a6;
+      border-radius: 100px; 
+      background-color: #ddaee1;
+      padding: 1px;
+      text-align: center;
+      }
+    .container {
+      text-align: center;
+      margin: 100px auto;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 32px;
+      
+      font-weight: bold;
+      color:  rgb(65, 53, 53); /* Pink Heading Color */
+    }
+    h2 {
+      font-size: 32px;
+      
+      font-weight: bold;
+       
+      color:#e91e63; /* Pink Heading Color */
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid black;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+
+    input[type="submit"] {
+      background-color: #e91e63; /* Pink Button Color */
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #d81b60; /* Darker Pink on Hover */
+    }
+  </style>
 </head>
+
 <body>
-    <div class="top-bar">
-        <div class="convertPDF"><pr style="padding-right:7px"> ConvertPDF</pr> 
-        <input type="file" id="pdfFileInput" style="display: none;">
-        <button onclick="document.getElementById('pdfFileInput').click();">File</button></div>
-    </div>
-    <div class="output-container">
-        <h2>Extracted Text:</h2>
-        <pre id="output"></pre>
-    </div>
+  <div class="topbar"><h1>F.L.A.M.E.S</h1></div>
+  <div class="container">
+    <h2>Check Your Relation</h2>
+    <form method="post">
+      <label for="name1">Enter Your Name:</label>
+      <input type="text" id="name1" name="name1" required>
 
-    <script>
-        document.getElementById('pdfFileInput').addEventListener('change', function() {
-            const file = this.files[0];
-            const formData = new FormData();
-            formData.append('pdf_file', file);
+      <label for="name2">Enter Your Partner's Name:</label>
+      <input type="text" id="name2" name="name2" required>
 
-            fetch('/extract_text', {
-                method: 'POST',
-                body: formData,
-            })
-            .then(response => response.text())
-            .then(text => {
-                document.getElementById('output').innerText = text;
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                document.getElementById('output').innerText = 'An error occurred while processing the PDF.';
-            });
-        });
-    </script>
+      <input type="submit" value="Calculate">
+    </form>
+  </div>
 </body>
+
 </html>
