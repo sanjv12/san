@@ -1,34 +1,39 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #7a7adb;
-background-image: linear-gradient(315deg, #7a7adb 0%, #170e13 74%);
-
+  background-image: linear-gradient(180deg, #c8b6ff 56%, #bbd0ff   64%);
   margin: 5px 0 0 0;
   min-height: 100vh;
   color: #333;
 }
-
+h2 {
+  font-size: 32px;
+  margin-bottom: 10%;
+  font-weight: bold;
+   
+  color:#e91e63; }
 .container {
   border-style:solid;
-  border-width: 20px;
-  border-color: #7a7adb;
+  border-width: 10px;
+  border-color: #0c6a89;
   border-radius: 100px; 
   text-align: center;
   margin: 50px auto;
   max-width: 400px;
   padding: 20px;
   border-radius: 10px;
-  background-color: #5e151554;
-  box-shadow: 0 2px 5px rgba(75, 71, 71, 0.1);
+  background-color: #ffffff;
+  
   /* border: 2px dashed #ff0000; */
 }
 .topbar{
   border-style:solid;
   border-width: 20px;
-  border-color: #d875a6;
+  border-color: #023e8a;
   border-radius: 100px; 
-  background-color:  #ddaee1;
-  padding: 1px;
+  background-color: #48cae4;
+  background-image: linear-gradient(270deg, #00b4d8 40%, #90e0ef 55%);
+  /* padding: 1px; */
   text-align: center;
   }
 
@@ -37,6 +42,11 @@ background-image: linear-gradient(315deg, #7a7adb 0%, #170e13 74%);
     
     font-weight: bold;
     color: rgb(65, 53, 53);
+  }
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
   }
 
 .heading {
@@ -69,6 +79,7 @@ button {
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 button:hover {
@@ -77,15 +88,16 @@ button:hover {
 
 /* Additional CSS for Result Page */
 .result-container {
+  border-style:solid;
+  border-width: 10px;
+  border-color: #0c6a89;
+  border-radius: 100px; 
   text-align: center;
   margin: 50px auto;
-  max-width: 400px;
-  padding: 20px;
+  max-width: 500px;
   border-radius: 10px;
-  background: -moz-linear-gradient(top, #d180b3 0%, #ca549d 50%, #be1c90 100%);
-  background: -webkit-linear-gradient(top, #d180b3 0%, #ca549d 50%, #be1c90 100%);
-  background: linear-gradient(to bottom, #d180b3 0%, #ca549d 50%, #be1c90 100%);
-  box-shadow: 0 2px 5px rgba(164, 118, 118, 0.1);
+  background-color: #ffffff;
+  
 }
 
 .result {
@@ -176,4 +188,35 @@ button:hover {
   margin-top: 30px;
   font-style: italic;
   color: #ddd1d1;
+}
+label {
+  
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  color: #be1c90;
+  width: 100%;
+   padding: 5px;
+   padding-right: 1px;
+  padding-left:1px;
+  border: 1px solid black;
+  border-radius: 2px;
+ 
+}
+
+input[type="submit"] {
+  background-color: #e91e63; /* Pink Button Color */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5%;
+}
+
+input[type="submit"]:hover {
+  
+  background-color: #d81b60; /* Darker Pink on Hover */
 }
